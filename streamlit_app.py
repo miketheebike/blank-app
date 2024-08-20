@@ -30,18 +30,18 @@ def plot_prob_dist():
 
 st.title("Interactive Probability Distribution Survey")
 
-# Display the bar chart
-fig = plot_prob_dist()
-click_data = st.plotly_chart(fig, use_container_width=True)
+# # Display the bar chart
+# fig = plot_prob_dist()
+# click_data = st.plotly_chart(fig, use_container_width=True)
 
-# Update the probability distribution based on user interaction
-if click_data is not None:
-    update_prob_dist(click_data['clickData'])
+# # Update the probability distribution based on user interaction
+# if click_data is not None:
+#     update_prob_dist(click_data['clickData'])
 
-# Display the updated probability distribution in a table
-st.write("Current Probability Distribution")
-prob_df = pd.DataFrame({
-    "Option": [f"Option {i+1}" for i in range(len(st.session_state.prob_dist))],
-    "Probability": st.session_state.prob_dist
-})
+# # Display the updated probability distribution in a table
+# st.write("Current Probability Distribution")
+# prob_df = pd.DataFrame({
+#     "Option": [f"Option {i+1}" for i in range(len(st.session_state.prob_dist))],
+#     "Probability": st.session_state.prob_dist
+# })
 st.table(prob_df)
