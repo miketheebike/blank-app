@@ -2,9 +2,9 @@ import streamlit as st
 import plotly.graph_objs as go
 import pandas as pd
 
-# Initialize a session state to store the probability distribution
-if 'prob_dist' not in st.session_state:
-    st.session_state.prob_dist = [0.2, 0.2, 0.2, 0.2, 0.2]  # Example with 5 bars
+# # Initialize a session state to store the probability distribution
+# if 'prob_dist' not in st.session_state:
+#     st.session_state.prob_dist = [0.2, 0.2, 0.2, 0.2, 0.2]  # Example with 5 bars
 
 # # Function to update probability distribution based on clicks
 # def update_prob_dist(click_data):
