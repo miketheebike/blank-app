@@ -117,6 +117,14 @@ if st.button("Reset All Probabilities"):
 # Layout for table and plot side by side
 table_col, plot_col = st.columns([1, 2])
 
+with table_col:
+    # Display the updated probability distribution in a table
+    st.write("Current Probability Distribution")
+    prob_df = pd.DataFrame({
+        "Expectation Range": options,
+        "Probability (%)": [int(p) for p in st.session_state.prob_dist]  # Display without decimals
+    })
+    st.table(prob_df)
 
 
 with plot_col:
