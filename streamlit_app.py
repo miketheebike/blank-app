@@ -54,7 +54,7 @@ def plot_prob_dist():
 
     fig.update_layout(
         title={
-            'text': "Click on the bars to adjust probability distribution",
+            'text': "Probability distribution",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
