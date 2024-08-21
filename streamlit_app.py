@@ -54,7 +54,7 @@ def plot_prob_dist():
 
     fig.update_layout(
         title={
-            'text': "Probability distribution",
+            'text': "Click on the bars to adjust probability distribution",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
@@ -86,17 +86,17 @@ st.title("Interactive Probability Distribution Survey")
 # Calculate the remaining probability
 remaining_prob = calculate_remaining_prob()
 
-# Display the remaining probability
+# Display the remaining probability in its original location and size
 st.write(f"Remaining Probability: {remaining_prob:.0f}%")
-st.markdown(f"<h3 style='text-align: center; color: #32CD32;'>Remaining Probability: {remaining_prob:.0f}%</h3>", unsafe_allow_html=True)
 
 # Select an option to adjust
 selected_option = st.selectbox("Select the expectation range to adjust", options=options)
 
 # Get the index of the selected option
-#click_idx = options.index(selected_option)
-st.markdown("<h3 style='text-align: center; color: white;'>Adjust the probability (%)</h3>", unsafe_allow_html=True)
+click_idx = options.index(selected_option)
 
+# Add larger, more readable label for the slider
+st.markdown("<h3 style='text-align: center; color: white;'>Adjust the probability (%)</h3>", unsafe_allow_html=True)
 
 # Adjust the slider to be within the remaining probability, or display a message if no remaining probability
 if remaining_prob > 0:
