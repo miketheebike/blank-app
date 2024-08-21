@@ -87,13 +87,16 @@ st.title("Interactive Probability Distribution Survey")
 remaining_prob = calculate_remaining_prob()
 
 # Display the remaining probability
-st.write(f"Remaining Probability: {remaining_prob:.0f}%")
+#st.write(f"Remaining Probability: {remaining_prob:.0f}%")
+st.markdown(f"<h3 style='text-align: center; color: #32CD32;'>Remaining Probability: {remaining_prob:.0f}%</h3>", unsafe_allow_html=True)
 
 # Select an option to adjust
 selected_option = st.selectbox("Select the expectation range to adjust", options=options)
 
 # Get the index of the selected option
-click_idx = options.index(selected_option)
+#click_idx = options.index(selected_option)
+st.markdown("<h3 style='text-align: center; color: white;'>Adjust the probability (%)</h3>", unsafe_allow_html=True)
+
 
 # Adjust the slider to be within the remaining probability, or display a message if no remaining probability
 if remaining_prob > 0:
