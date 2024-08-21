@@ -54,7 +54,7 @@ def plot_prob_dist():
 
     fig.update_layout(
         title={
-            'text': "Probability distribution",
+            'text': "Click on the bars to adjust probability distribution",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
@@ -95,14 +95,11 @@ selected_option = st.selectbox("Select the expectation range to adjust", options
 # Get the index of the selected option
 click_idx = options.index(selected_option)
 
-# Add larger, more readable label for the slider
-st.markdown("<h3 style='text-align: center; color: white;'>Adjust the probability (%)</h3>", unsafe_allow_html=True)
-
 # Adjust the slider to be within the remaining probability, or display a message if no remaining probability
 if remaining_prob > 0:
     max_value = min(100.0, st.session_state.prob_dist[click_idx] + remaining_prob)
     if max_value > 0:
-        new_prob = st.slider("", 0, int(max_value), int(st.session_state.prob_dist[click_idx]), step=5)
+        new_prob = st.slider("Adjust the probability (%)", 0, int(max_value), int(st.session_state.prob_dist[click_idx]), step=5)
         # Automatically update the probability distribution when the slider is moved
         update_prob_dist(click_idx, new_prob)
     else:
@@ -125,7 +122,6 @@ with table_col:
         "Probability (%)": [int(p) for p in st.session_state.prob_dist]  # Display without decimals
     })
     st.table(prob_df)
-
 
 with plot_col:
     # Replot the updated distribution
