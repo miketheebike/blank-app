@@ -77,8 +77,6 @@ def plot_prob_dist():
             linecolor='white',
             mirror=True
         ),
-        plot_bgcolor='black',  # Dark background for the plot
-        paper_bgcolor='black',  # Dark background for the entire figure
         font=dict(color='white'),  # White font color for readability
     )
     return fig
