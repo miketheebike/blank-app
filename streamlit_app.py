@@ -102,7 +102,7 @@ st.markdown("<h3 style='text-align: center; color: white;'>Adjust the probabilit
 if remaining_prob > 0:
     max_value = min(100.0, st.session_state.prob_dist[click_idx] + remaining_prob)
     if max_value > 0:
-        new_prob = st.slider("Adjust the probability (%)", 0, int(max_value), int(st.session_state.prob_dist[click_idx]), step=5)
+        new_prob = st.slider("", 0, int(max_value), int(st.session_state.prob_dist[click_idx]), step=5)
         # Automatically update the probability distribution when the slider is moved
         update_prob_dist(click_idx, new_prob)
     else:
