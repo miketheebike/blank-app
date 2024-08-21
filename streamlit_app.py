@@ -87,7 +87,7 @@ st.title("Interactive Probability Distribution Survey")
 remaining_prob = calculate_remaining_prob()
 
 # Display the remaining probability
-#st.write(f"Remaining Probability: {remaining_prob:.0f}%")
+st.write(f"Remaining Probability: {remaining_prob:.0f}%")
 st.markdown(f"<h3 style='text-align: center; color: #32CD32;'>Remaining Probability: {remaining_prob:.0f}%</h3>", unsafe_allow_html=True)
 
 # Select an option to adjust
