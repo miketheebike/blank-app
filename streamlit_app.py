@@ -2,10 +2,9 @@ import streamlit as st
 import plotly.graph_objs as go
 import pandas as pd
 
-# Set the page configuration to wide mode
 st.set_page_config(layout="wide")
 
-# Define the options
+# Define  options
 options = [
     "Less than -15%",
     "-15% to -10%",
@@ -17,7 +16,7 @@ options = [
     "More than 15%"
 ]
 
-# Initialize a session state to store the probability distribution
+#  Session state forprobability distribution
 if 'prob_dist' not in st.session_state:
     st.session_state.prob_dist = [0.0] * len(options)  # Initialize all probabilities to 0
 
